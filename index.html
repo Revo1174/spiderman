@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider-Man | Interfaz de Cómic Interactiva</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>¡SENTIDO ARÁCNIDO!</h1>
+    </header>
+
+    <main class="comic-container">
+        
+        <section class="comic-panel dangerous-panel" onclick="activarSentidoAracnido()">
+            <img src="img/chill.png" alt="Spider-Man" class="panel-img" id="img-sentido">
+            <div class="speech-bubble" id="burbuja-sentido">Todo tranquilo...</div>
+        </section>
+
+        <section class="comic-panel web-panel" onclick="dispararRedes()">
+            <img src="img/peter.png" alt="Lanzatelarañas" class="panel-img">
+            <h2 class="panel-title">¡LANZAR REDES! (x5)</h2>
+            <div id="contenedor-redes" class="redes-display"></div>
+        </section>
+
+        <section class="comic-panel villain-panel" onclick="ciclarVillano()">
+            <img src="img/duende.png" alt="Villano Actual" class="panel-img" id="img-villano">
+            <h2 class="panel-title" id="txt-villano">OBJETIVO: Duende Verde</h2>
+        </section>
+
+    </main>
+
+    <script src="java/scrip.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* Paleta de colores de Spider-Man Cómic */
+body {
+    background-color: #ffffff; /* FONDO BLANCO LIMPIO */
+    color: #000000;
+    font-family: 'Arial Black', 'Helvetica Bold', sans-serif; /* Tipografía bold y agresiva */
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background-color: #0033CC; /* AZUL Spider-Man */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #000000; /* Borde negro grueso */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0px 5px 0px #E23636; /* Sombra roja sutil */
+}
+
+.comic-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    max-width: 700px; /* Paneles un poco más estrechos */
+    margin: 0 auto;
+}
+
+.comic-panel {
+    background-color: #ffffff;
+    border: 5px solid #000000; /* Borde negro estilo tinta */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-align: center;
+    box-shadow: 8px 8px 0px #000000; /* Sombra cuadrada negra clásica (como el primero) */
+}
+
+/* EFECTO HOVER: Resalta en amarillo comic */
+.comic-panel:hover {
+    background-color: #ffde00; /* Amarillo vibrante */
+    transform: translate(2px, 2px); /* Se 'hunde' un poco */
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.panel-img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #000000;
+    margin-bottom: 15px;
+    transition: 0.2s ease;
+}
+
+.panel-title {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #E23636; /* ROJO Spider-Man */
+    margin: 0;
+}
+
+/* --- ESTILOS ESPECÍFICOS DE LA LÓGICA (CSS) --- */
+
+/* GLOBO DE DIÁLOGO (Bubble) */
+.speech-bubble {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    font-family: 'Comic Sans MS', cursive; /* Estilo de fuente */
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-top-color: #000;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -7.5px;
+    margin-bottom: -15px;
+}
+
+/* EFECTO 1: Sentido Arácnido Activo */
+.dangerous-panel.active-sense {
+    border-color: #E23636; /* Borde rojo */
+    box-shadow: 8px 8px 0px #E23636; /* Sombra roja */
+    animation: flash-sentido 0.3s infinite;
+}
+.dangerous-panel.active-sense .panel-img {
+    filter: none; /* Quitamos filtros si pusiste uno */
+}
+.dangerous-panel.active-sense .speech-bubble {
+    background-color: #ffde00; /* Burbuja amarilla de alerta */
+    color: #E23636;
+}
+
+@keyframes flash-sentido {
+    0% { background-color: #ffffff; }
+    50% { background-color: rgba(226, 54, 54, 0.2); }
+    100% { background-color: #ffffff; }
+}
+
+/* EFECTO 2: Contenedor de Redes (FOR) */
+.redes-display {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+.web-icon {
+    width: 50px; /* Tamaño de los íconos de red generated */
+    height: 50px;
+    border: 2px solid #000;
+    animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0) rotate(-45deg); }
+    to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
